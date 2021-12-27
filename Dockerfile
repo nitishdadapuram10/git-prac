@@ -1,3 +1,4 @@
 FROM centos:latest
-RUN yum install httpd -y
-
+CMD yum -y install httpd; yum clean all; systemctl enable httpd.service
+EXPOSE 80
+CMD ["/usr/sbin/init"]
